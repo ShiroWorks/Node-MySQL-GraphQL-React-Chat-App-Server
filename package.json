@@ -16,8 +16,8 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "dev": "nodemon server.js --ignore client/",
-    "start": "node server.js"
+    "serve": "node server",
+    "start": "node server"
   },
   "keywords": [],
   "author": "",
