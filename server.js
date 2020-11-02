@@ -7,7 +7,7 @@ const { sequelize } = require('./models')
 const resolvers = require('./graphql/resolvers')
 const typeDefs = require('./graphql/typeDefs')
 const contextMiddleware = require('./util/contextMiddleware')
-
+const PORT = process.env.PORT || 5000;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -15,7 +15,7 @@ const server = new ApolloServer({
   subscriptions: { path: '/' },
 })
 
-server.listen().then(({ url, subscriptionsUrl }) => {
+server.listen({ port: PORT }).then(({ url, subscriptionsUrl }) => {
   console.log(`🚀 Server ready at ${url}`)
   console.log(`🚀 Susbscription ready at ${subscriptionsUrl}`)
 
